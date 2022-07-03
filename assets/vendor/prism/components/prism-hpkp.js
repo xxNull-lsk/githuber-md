@@ -5,16 +5,10 @@
  */
 
 Prism.languages.hpkp = {
-	'directive':  {
-		pattern: /\b(?:(?:includeSubDomains|preload|strict)(?: |;)|pin-sha256="[a-zA-Z\d+=/]+"|(?:max-age|report-uri)=|report-to )/,
-		alias: 'keyword'
+	'directive': {
+		pattern: /\b(?:includeSubDomains|max-age|pin-sha256|preload|report-to|report-uri|strict)(?=[\s;=]|$)/i,
+		alias: 'property'
 	},
-	'safe': {
-		pattern: /\d{7,}/,
-		alias: 'selector'
-	},
-	'unsafe': {
-		pattern: /\d{0,6}/,
-		alias: 'function'
-	}
+	'operator': /=/,
+	'punctuation': /;/
 };
